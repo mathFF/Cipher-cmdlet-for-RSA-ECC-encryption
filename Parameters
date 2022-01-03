@@ -1,0 +1,69 @@
+/B        Anula em caso de erro. Por padrão, CIPHER continua
+              em execução mesmo quando há erros.
+    /C        Exibe informações sobre o arquivo criptografado.
+    /D        Descriptografa os arquivos ou diretórios especificados.
+    /E        Criptografa os arquivos ou diretórios especificados. Os diretórios serão
+              marcados para que os arquivos adicionados posteriormente sejam criptografados. O
+              arquivo criptografado poderá ser descriptografado quando modificado caso
+              o diretório pai não esteja criptografado. É recomendável
+              criptografar o arquivo e o diretório pai.
+    /H        Exibe arquivos com os atributos ocultos ou do sistema. Esses arquivos
+              são omitidos por padrão.
+    /K        Cria um novo certificado ou chave para uso com EFS. Se essa
+              opção for escolhida, todas as outras opções serão ignoradas.
+
+              Observação: por padrão, /K cria um certificado e uma chave que se conformam
+                    à política de grupo atual. Se ECC for especificado, um certificado autoassinado
+                    será criado com o tamanho da chave especificada.
+
+    /N        Esta opção só funciona com /U. Ela impedirá que as chaves sejam
+              atualizadas. É usada para localizar todos os arquivos criptografados nas
+              unidades locais.
+    /R        Gera uma chave e um certificado de recuperação EFS e, em seguida, grava-os
+              em um arquivo .PFX (contendo certificado e chave privada) e em um
+              arquivo .CER (contendo somente o certificado). Um administrador pode
+              adicionar o conteúdo de .CER à política de recuperação EFS para criar
+              a chave de recuperação para usuários, bem como importar o arquivo .PFX para recuperar
+              arquivos individuais. Se SMARTCARD for especificado, gravará a
+              chave e o certificado de recuperação em um cartão inteligente. Um arquivo .CER é
+              gerado (contendo somente o certificado). Nenhum arquivo .PFX é
+              gerado.
+
+              Observação: por padrão, /R cria uma chave e um certificado de recuperação RSA de
+                    2.048 bits. Se ECC for especificado, deverá ser seguido por uma
+                    chave de 256, 384 ou 521 bits.
+
+    /P        Cria um blob de política de recuperação codificado em base64 do certificado
+              transmitido. Esse blob pode ser usado para definir a política DRA para
+              implantações MDM.
+    /S        Executa a operação especificada no diretório especificado e em todos os
+              arquivos e subdiretórios dentro dele.
+    /U        Tenta tocar todos os arquivos criptografados nas unidades locais. Isso
+              atualizará a chave de criptografia ou as chaves de recuperação de arquivo do usuário
+              caso tenham sido alteradas. Essa opção não funciona com outras opções,
+              exceto com /N.
+    /W        Remove dados do espaço em disco disponível não utilizado no volume
+              inteiro. Se essa opção for escolhida, todas as outras opções serão ignoradas.
+              O diretório especificado pode estar localizado em qualquer parte do volume local. Se ele
+              for um ou mais pontos de montagem em um diretório em outro volume, os
+              dados nesse volume serão removidos.
+    /X        Faz backup do certificado e das chaves EFS no nome de arquivo do arquivo. Se efsfile for
+              especificado, os certificados atuais do usuário usados para criptografar o
+              arquivo serão submetidos a backup. Caso contrário, o certificado e as chaves EFS atuais
+              do usuário serão submetidos a backup.
+    /Y        Exibe a impressão digital do certificado EFS atual no computador local.
+    /ADDUSER Adiciona um usuário ao(s) arquivos(s) criptografado(s) especificado(s). Se CERTHASH for
+              especificado, a criptografia pesquisará um certificado com esse hash
+              SHA1. Se CERTFILE for especificado, a criptografia extrairá o
+              certificado do arquivo. Se USER for especificado, a criptografia
+              tentará localizar o certificado do usuário nos Serviços de Domínio do Active
+              Directory.
+    /FLUSHCACHE
+              Limpa o chave de chave EFS do usuário no servidor especificado.
+              Se servername não for especificado, a criptografia limpará o cache de chave do usuário
+              no computador local.
+    /REKEY    Atualiza o(s) arquivo(s) criptografado(s) especificado(s) para usar a chave
+              EFS configurada atual.
+    /REMOVEUSER
+              Remove um usuário do(s) arquivo(s) especificado(s). CERTHASH deve ser o hash
+              SHA1 do certificado a ser removido.
