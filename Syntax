@@ -1,0 +1,30 @@
+Exibe ou altera a criptografia de diretórios [files] em partições NTFS.
+
+  CIPHER [/E | /D | /C]
+         [/S:directory] [/B] [/H] [pathname [...]]
+
+  CIPHER /K [/ECC:256|384|521]
+
+  CIPHER /R:filename [/SMARTCARD] [/ECC:256|384|521]
+
+  CIPHER /P:filename.cer
+
+  CIPHER /U [/N]
+
+  CIPHER /W:directory
+
+  CIPHER /X[:efsfile] [filename]
+
+  CIPHER /Y
+
+  CIPHER /ADDUSER [/CERTHASH:hash | /CERTFILE:filename | /USER:username]
+         [/S:directory] [/B] [/H] [pathname [...]]
+
+  CIPHER /FLUSHCACHE [/SERVER:servername]
+
+  CIPHER /REMOVEUSER /CERTHASH:hash
+         [/S:directory] [/B] [/H] [pathname [...]]
+
+  CIPHER /REKEY [pathname [...]]
+
+  
