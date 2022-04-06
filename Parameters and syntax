@@ -1,4 +1,33 @@
-/B        Anula em caso de erro. Por padrão, CIPHER continua
+Exibe ou altera a criptografia de diretórios [files] em partições NTFS.
+
+  CIPHER [/E | /D | /C]
+         [/S:directory] [/B] [/H] [pathname [...]]
+
+  CIPHER /K [/ECC:256|384|521]
+
+  CIPHER /R:filename [/SMARTCARD] [/ECC:256|384|521]
+
+  CIPHER /P:filename.cer
+
+  CIPHER /U [/N]
+
+  CIPHER /W:directory
+
+  CIPHER /X[:efsfile] [filename]
+
+  CIPHER /Y
+
+  CIPHER /ADDUSER [/CERTHASH:hash | /CERTFILE:filename | /USER:username]
+         [/S:directory] [/B] [/H] [pathname [...]]
+
+  CIPHER /FLUSHCACHE [/SERVER:servername]
+
+  CIPHER /REMOVEUSER /CERTHASH:hash
+         [/S:directory] [/B] [/H] [pathname [...]]
+
+  CIPHER /REKEY [pathname [...]]
+
+    /B        Anula em caso de erro. Por padrão, CIPHER continua
               em execução mesmo quando há erros.
     /C        Exibe informações sobre o arquivo criptografado.
     /D        Descriptografa os arquivos ou diretórios especificados.
@@ -67,3 +96,13 @@
     /REMOVEUSER
               Remove um usuário do(s) arquivo(s) especificado(s). CERTHASH deve ser o hash
               SHA1 do certificado a ser removido.
+
+    directory Um caminho de diretório.
+    filename Um nome de arquivo sem extensões.
+    pathname Especifica um padrão, arquivo ou diretório.
+    efsfile   Um caminho de arquivo criptografado.
+
+    Usado sem parâmetros, CIPHER exibe o estado de criptografia do
+    diretório atual e todos os arquivos contidos nele. É possível usar vários nomes e curingas de
+    diretório. É necessário colocar espaços entre múltiplos parâmetros.
+
